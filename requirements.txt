@@ -1,2 +1,7 @@
 opentelemetry-distro==0.26b1
 opentelemetry-instrumentation==0.26b1
+opentelemetry-exporter-otlp-proto-http==1.7.1
+opentelemetry-propagator-jaeger==1.7.1
+opentelemetry-propagator-b3==1.7.1
+opentelemetry-propagator-aws-xray==1.0.1
+opentelemetry-propagator-ot-trace==0.26b1
