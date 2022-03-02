@@ -13,7 +13,6 @@ here = abspath(dirname(__file__))
 with open(join(here, 'VERSION')) as VERSION_FILE:
     __versionstr__ = VERSION_FILE.read().strip()
 
-
 with open(join(here, 'requirements.txt')) as REQUIREMENTS:
     INSTALL_REQUIRES = REQUIREMENTS.read().split('\n')
 
@@ -26,32 +25,32 @@ with io.open(join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name="sumologic-opentelemetry",
     version=__versionstr__,
-    url="https://github.com/jmroz-sumo/sumologic-opentelemetry-python",
-    license='Apache',
-
-    author="Sumo Logic, Inc. Authors",
-    author_email="jmroz@sumologic.com",
-
     description="An all-in-one package for python projects used to enable OpenTelemetry auto-instrumentation",
-    
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-
+    url="https://github.com/jmroz-sumo/sumologic-opentelemetry-python",
+    license='Apache-2.0',
+    author="Sumo Logic, Inc. Authors",
+    author_email="jmroz@sumologic.com",
     packages=find_packages(exclude=('tests',)),
-
     install_requires=INSTALL_REQUIRES,
+    python_requires='>=3.6',
 
     # Trove classifiers
     # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
+
+    scripts=['scripts/sumologic-opentelemetry-bootstrap', 'scripts/sumologic-opentelemetry-instrument'],
 
     zip_safe=True,
     include_package_data=True,
