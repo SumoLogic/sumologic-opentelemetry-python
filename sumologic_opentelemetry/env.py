@@ -47,6 +47,6 @@ def dump():
     # Print remaining OTEL env vars.
     dumped = set(env_var.name for env_var in SUMOLOGIC_OTEL_VARS)
     remaining_env_vars = {k: v for k, v in os.environ.items() if k.startswith('OTEL_') and k not in dumped}
-    for env_var in otel_env:
+    for env_var in remaining_env_vars:
        print(f'{env_var.name}={os.environ[env_var.name]}')
 
