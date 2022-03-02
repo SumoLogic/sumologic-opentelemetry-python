@@ -17,7 +17,6 @@ with open(join(here, 'requirements.txt')) as REQUIREMENTS:
     INSTALL_REQUIRES = REQUIREMENTS.read().split('\n')
 
 with io.open(join(here, 'README.md'), encoding='utf-8') as f:
-    # long_description = f.read()
     text_type = type(u"")
     LONG_DESCRIPTION = re.sub(text_type(r':[a-z]+:`~?(.*?)`'), text_type(r'``\1``'), f.read())
 
@@ -50,13 +49,8 @@ setup(
         'Programming Language :: Python :: 3.10',
     ],
 
-    scripts=['scripts/sumologic-opentelemetry-bootstrap', 'scripts/sumologic-opentelemetry-instrument'],
+    scripts=['scripts/sumologic-opentelemetry-instrument'],
 
     zip_safe=True,
     include_package_data=True,
-
-    # # $ setup.py publish support.
-    # cmdclass={
-    #     'upload': UploadCommand,
-    # },
 )

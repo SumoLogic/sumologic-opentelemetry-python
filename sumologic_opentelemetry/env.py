@@ -1,6 +1,5 @@
 import os
 
-# from dataclasses import dataclass
 from collections import namedtuple
 
 EnvironmentVariable = namedtuple('EnvironmentVariable', ['name', 'default', 'description'])
@@ -40,8 +39,14 @@ def generate():
 
 
 def dump():
+    # Print most important env vars first.
     for env_var in SUMOLOGIC_OTEL_VARS:
         print(f'# {env_var.description}')
         print(f'{env_var.name}={os.environ[env_var.name]}')
 
+    # Print remaining OTEL env vars.
+    dumped = set(env_var.name for env_var in SUMOLOGIC_OTEL_VARS)
+    remaining_env_vars = {k: v for k, v in os.environ.items() if k.startswith('OTEL_') and k not in dumped}
+    for env_var in otel_env:
+       print(f'{env_var.name}={os.environ[env_var.name]}')
 
