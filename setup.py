@@ -30,7 +30,7 @@ setup(
     url="https://github.com/jmroz-sumo/sumologic-opentelemetry-python",
     license='Apache-2.0',
     author="Sumo Logic, Inc. Authors",
-    author_email="jmroz@sumologic.com",
+    author_email="support@sumologic.com,
     packages=find_packages(exclude=('tests',)),
     install_requires=INSTALL_REQUIRES,
     python_requires='>=3.6',
@@ -38,7 +38,7 @@ setup(
     # Trove classifiers
     # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

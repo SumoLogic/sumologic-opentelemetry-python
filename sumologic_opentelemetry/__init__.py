@@ -2,6 +2,6 @@
 
 from . import env
 
-__version__ = '0.1.11'
-__author__ = 'Sumo Logic Authors. <jmroz@sumologic.com>'
+__version__ = '0.1.22'
+__author__ = 'Sumo Logic Authors <support@sumologic.com>'
 __all__ = []
