@@ -27,7 +27,7 @@ setup(
     description="An all-in-one package for python projects used to enable OpenTelemetry auto-instrumentation",
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    url="https://github.com/jmroz-sumo/sumologic-opentelemetry-python",
+    url="https://github.com/SumoLogic/sumologic-opentelemetry-python",
     license='Apache-2.0',
     author="Sumo Logic, Inc. Authors",
     author_email="support@sumologic.com,

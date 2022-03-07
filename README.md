@@ -1,22 +1,21 @@
 # Sumo Logic OpenTelemetry Python
 
-
 An all-in-one package for python projects used to enable OpenTelemetry auto-instrumentation.
 
 It contains all supported propagators and auto-instrumentation plugins.
 
-## Instalation
+## Installation
 
 ```
 pip install sumologic-opentelemetry
 ```
 
-
 ## Instrumented packages
 
-This package installs all officially supported auto-instrumentation packages() as well as comonly used propagators and exporters:
+This package installs all officially supported auto-instrumentation packages as well as commonly used propagators and exporters:
 
 ### Instrumented packages
+
 ```
 opentelemetry-instrumentation-aws-lambda
 opentelemetry-instrumentation-dbapi
@@ -57,6 +56,7 @@ opentelemetry-instrumentation-urllib3
 ```
 
 ### Included propagators
+
 ```
 opentelemetry-distro
 opentelemetry-instrumentation
@@ -68,28 +68,40 @@ opentelemetry-propagator-ot-trace
 ```
 
 ## Application execution
- Execute the following command. The command will also print the opnteleemtry config used.
+
+ Execute the following command. The command will also print the opentelemetry config used.
 
 ```
 sumologic-opentelemetry-instrument python3 SCRIPT_NAME.py
 ```
 
 ## Environment variables config
-The wrapper command checks for the basic opentelemetry env variables - OTEL_PROPAGATORS, OTEL_TRACES_EXPORTER, OTEL_SERVICE_NAME, OTEL_EXPORTER_OTLP_ENDPOINT, OTEL_RESOURCE_ATTRIBUTES - that are required for the collected data to be usefull withinn Sumo Logic.
-If those are set, the wrapper will not attempt to overwrite them.
+
+The wrapper command checks for the following basic OpenTelemetry env variables that are required for the collected data to be useful within Sumo Logic:
+
+- `OTEL_PROPAGATORS`
+- `OTEL_TRACES_EXPORTER`
+- `OTEL_SERVICE_NAME`
+- `OTEL_EXPORTER_OTLP_ENDPOINT`
+- `OTEL_RESOURCE_ATTRIBUTES`
 
 ### Propagators
-By default all propgators are enables (`OTEL_PROPAGATORS=tracecontext,baggage,b3,b3multi,jaeger,xray,ottrace`)
+
+By default, all propgators are enabled (`OTEL_PROPAGATORS=tracecontext,baggage,b3,b3multi,jaeger,xray,ottrace`).
 
 ### Exporter.
-By default exported is set to OTLP HTTP (`OTEL_TRACES_EXPORTER=otlp_proto_http`)
+
+By default, exported is set to OTLP HTTP (`OTEL_TRACES_EXPORTER=otlp_proto_http`)
 
 ### Service name
-By default service name will not be set `OTEL_SERVICE_NAME=`. Overwrite the env var with a string value representing service business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
+
+By default, service name will not be set `OTEL_SERVICE_NAME=`. Overwrite the env var with a string value representing service business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 
 
 ### Endpoint
-By default endpoint is not set (`OTEL_EXPORTER_OTLP_ENDPOINT=`). Represents the endpoint where telemetry data will be sent. Change to appropriate endpoint, for example `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681`
+
+By default, endpoint is not set (`OTEL_EXPORTER_OTLP_ENDPOINT=`). Represents the endpoint where telemetry data will be sent. Change to appropriate endpoint, for example `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681`
 
 # Resource attributes
-By default not set (`OTEL_RESOURCE_ATTRIBUTES=`). Is used to configure the application name (i.e. `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME`). The application name will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
+
+By default, resource attributes are not set (`OTEL_RESOURCE_ATTRIBUTES=`). Is used to configure the application name (i.e. `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME`). The application name will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
