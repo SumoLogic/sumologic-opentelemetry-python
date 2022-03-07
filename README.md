@@ -16,44 +16,44 @@ This package installs all officially supported auto-instrumentation packages as 
 
 ### Instrumented packages
 
-```
-opentelemetry-instrumentation-aws-lambda
-opentelemetry-instrumentation-dbapi
-opentelemetry-instrumentation-logging
-opentelemetry-instrumentation-sqlite3
-opentelemetry-instrumentation-urllib
-opentelemetry-instrumentation-wsgi
-opentelemetry-instrumentation-aiohttp-client
-opentelemetry-instrumentation-aiopg
-opentelemetry-instrumentation-asgi
-opentelemetry-instrumentation-asyncpg
-opentelemetry-instrumentation-boto
-opentelemetry-instrumentation-botocore
-opentelemetry-instrumentation-celery
-opentelemetry-instrumentation-django
-opentelemetry-instrumentation-elasticsearch
-opentelemetry-instrumentation-falcon
-opentelemetry-instrumentation-fastapi
-opentelemetry-instrumentation-flask
-opentelemetry-instrumentation-grpc
-opentelemetry-instrumentation-httpx
-opentelemetry-instrumentation-jinja2
-opentelemetry-instrumentation-kafka-python
-opentelemetry-instrumentation-mysql
-opentelemetry-instrumentation-pika
-opentelemetry-instrumentation-psycopg2
-opentelemetry-instrumentation-pymemcache
-opentelemetry-instrumentation-pymongo
-opentelemetry-instrumentation-pymysql
-opentelemetry-instrumentation-pyramid
-opentelemetry-instrumentation-redis
-opentelemetry-instrumentation-requests
-opentelemetry-instrumentation-sklearn
-opentelemetry-instrumentation-sqlalchemy
-opentelemetry-instrumentation-starlette
-opentelemetry-instrumentation-tornado
-opentelemetry-instrumentation-urllib3
-```
+
+- [opentelemetry-instrumentation-aws-lambda](https://pypi.org/project/opentelemetry-instrumentation-aws-lambda/)
+- [opentelemetry-instrumentation-dbapi](https://pypi.org/project/)
+- [opentelemetry-instrumentation-logging](https://pypi.org/project/)
+- [opentelemetry-instrumentation-sqlite3](https://pypi.org/project/)
+- [opentelemetry-instrumentation-urllib](https://pypi.org/project/)
+- [opentelemetry-instrumentation-wsgi](https://pypi.org/project/)
+- [opentelemetry-instrumentation-aiohttp-client](https://pypi.org/project/)
+- [opentelemetry-instrumentation-aiopg](https://pypi.org/project/)
+- [opentelemetry-instrumentation-asgi](https://pypi.org/project/)
+- [opentelemetry-instrumentation-asyncpg](https://pypi.org/project/)
+- [opentelemetry-instrumentation-boto](https://pypi.org/project/)
+- [opentelemetry-instrumentation-botocore](https://pypi.org/project/)
+- [opentelemetry-instrumentation-celery](https://pypi.org/project/)
+- [opentelemetry-instrumentation-django](https://pypi.org/project/)
+- [opentelemetry-instrumentation-elasticsearch](https://pypi.org/project/)
+- [opentelemetry-instrumentation-falcon](https://pypi.org/project/)
+- [opentelemetry-instrumentation-fastapi](https://pypi.org/project/)
+- [opentelemetry-instrumentation-flask](https://pypi.org/project/)
+- [opentelemetry-instrumentation-grpc](https://pypi.org/project/)
+- [opentelemetry-instrumentation-httpx](https://pypi.org/project/)
+- [opentelemetry-instrumentation-jinja2](https://pypi.org/project/)
+- [opentelemetry-instrumentation-kafka-python](https://pypi.org/project/)
+- [opentelemetry-instrumentation-mysql](https://pypi.org/project/)
+- [opentelemetry-instrumentation-pika](https://pypi.org/project/)
+- [opentelemetry-instrumentation-psycopg2](https://pypi.org/project/)
+- [opentelemetry-instrumentation-pymemcache](https://pypi.org/project/)
+- [opentelemetry-instrumentation-pymongo](https://pypi.org/project/)
+- [opentelemetry-instrumentation-pymysql](https://pypi.org/project/)
+- [opentelemetry-instrumentation-pyramid](https://pypi.org/project/)
+- [opentelemetry-instrumentation-redis](https://pypi.org/project/)
+- [opentelemetry-instrumentation-requests](https://pypi.org/project/)
+- [opentelemetry-instrumentation-sklearn](https://pypi.org/project/)
+- [opentelemetry-instrumentation-sqlalchemy](https://pypi.org/project/)
+- [opentelemetry-instrumentation-starlette](https://pypi.org/project/)
+- [opentelemetry-instrumentation-tornado](https://pypi.org/project/)
+- [opentelemetry-instrumentation-urllib3](https://pypi.org/project/)
+
 
 ### Included propagators
 
