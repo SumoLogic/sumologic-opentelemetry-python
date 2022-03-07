@@ -4,10 +4,9 @@
 import re
 import sys
 
-import sumologic_opentelemetry
-
 from opentelemetry.instrumentation.auto_instrumentation import run
 
+import sumologic_opentelemetry
 
 if __name__ == '__main__':
     sumologic_opentelemetry.env.generate()
