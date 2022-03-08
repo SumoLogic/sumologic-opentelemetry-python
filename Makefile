@@ -1,10 +1,16 @@
+.PHONY: install-test test
+test: pytest
+
 .PHONY: install
 install: install-lint
-
 
 .PHONY: install-lint
 install-lint:
 	python3 -m pip install -r requirements-lint.txt
+
+.PHONY: install-test
+install-test:
+	python3 -m pip install -r requirements-test.txt
 
 .PHONY: lint
 lint:
@@ -16,6 +22,10 @@ lint:
 format:
 	black .
 	isort .
+
+.PHONY: pytest
+pytest:
+	python3 -m pytest -v -rpP test/
 
 # https://packaging.python.org/tutorials/packaging-projects/
 .PHONY: build

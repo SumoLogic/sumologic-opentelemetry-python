@@ -48,13 +48,14 @@ def dump():
 
     # Print most important env vars first.
     for env_var in SUMOLOGIC_OTEL_VARS:
-        print(f"# {env_var.description}")
-        print(f"{env_var.name}={os.environ[env_var.name]}")
+        if env_var.name in os.environ:
+            print(f"# {env_var.description}")
+            print(f"{env_var.name}={os.environ[env_var.name]}")
 
     # Print remaining OTEL env vars.
     dumped = set(env_var.name for env_var in SUMOLOGIC_OTEL_VARS)
     otel_env = (x for x in os.environ if x.startswith("OTEL_"))
     remaining_otel_env = (x for x in otel_env if x not in dumped)
 
-    for env_var in remaining_otel_env:
-        print(f"{env_var.name}={os.environ[env_var.name]}")
+    for env_var_name in remaining_otel_env:
+        print(f"{env_var_name}={os.environ[env_var_name]}")
