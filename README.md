@@ -21,8 +21,9 @@ pip install sumologic-opentelemetry
 Instrumented packages needs to be installed per application.
 Command bellow executed in the root directory of your Python application will install corresponding instrumented packages used by the application.
 
-$ opentelemetry-bootstrap --action=install
-
+```
+opentelemetry-bootstrap --action=install
+```
 ## Instrumented packages
 
 This package installs all officially supported auto-instrumentation packages as well as commonly used propagators and exporters:
