@@ -83,7 +83,7 @@ Following propagators are installed as a dependency.
 
 ## Application execution
 
- Execute the following command. The command will also print the opentelemetry config used.
+Execute the following command. The command will also print the opentelemetry config used.
 
 ```
 sumologic-opentelemetry-instrument python3 SCRIPT_NAME.py
