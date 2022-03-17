@@ -1,4 +1,4 @@
-"""Environment managment package for sunologic OTEL instrumentation"""
+"""Environment management package for sunologic OTEL instrumentation"""
 
 import os
 from collections import namedtuple
