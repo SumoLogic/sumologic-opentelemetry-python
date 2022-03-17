@@ -2,34 +2,52 @@
 
 An all-in-one package for python projects used to enable OpenTelemetry auto-instrumentation.
 
-It contains all supported propagators and auto-instrumentation plugins.
+Includes all supported propagators and auto-instrumentation plugins.
+
+- [Sumo Logic OpenTelemetry Python](#sumo-logic-opentelemetry-python)
+  - [Installation](#installation)
+  - [Installation without instrumented packages](#installation-without-instrumented-packages)
+  - [Instrumented packages](#instrumented-packages)
+    - [Instrumented packages](#instrumented-packages-1)
+    - [Propagators](#propagators)
+    - [Other requirements](#other-requirements)
+  - [Application execution](#application-execution)
+  - [Environment variables config](#environment-variables-config)
+    - [Propagators](#propagators-1)
+    - [Exporter](#exporter)
+    - [Service name](#service-name)
+    - [Endpoint](#endpoint)
+  - [Resource attributes](#resource-attributes)
 
 ## Installation
 
 Following command will installation the package with all instrumented packages.
 
-```
+```bash
 pip install sumologic-opentelemetry[all]
 ```
 
 ## Installation without instrumented packages
 
-```
+```bash
 pip install sumologic-opentelemetry
 ```
 
 Instrumented packages needs to be installed per application.
 Command bellow executed in the root directory of your Python application will install corresponding instrumented packages used by the application.
 
-```
+```bash
 opentelemetry-bootstrap --action=install
 ```
+
 ## Instrumented packages
 
 This package installs all officially supported auto-instrumentation packages as well as commonly used propagators and exporters:
 
 ### Instrumented packages
+
 Following list of instrumented packages is optional, but recommended for easy installation:
+
 - [opentelemetry-instrumentation-aws-lambda](https://pypi.org/project/opentelemetry-instrumentation-aws-lambda/)
 - [opentelemetry-instrumentation-dbapi](https://pypi.org/project/opentelemetry-instrumentation-dbapi)
 - [opentelemetry-instrumentation-logging](https://pypi.org/project/opentelemetry-instrumentation-logging)
@@ -104,21 +122,22 @@ The wrapper command checks for the following basic OpenTelemetry env variables t
 
 By default, all propgators are enabled (`OTEL_PROPAGATORS=tracecontext,baggage,b3,b3multi,jaeger,xray,ottrace`).
 
-### Exporter.
+### Exporter
 
-By default, exported is set to OTLP HTTP (`OTEL_TRACES_EXPORTER=otlp_proto_http`)
+By default, exported is set to OTLP HTTP (`OTEL_TRACES_EXPORTER=otlp_proto_http`).
 
 ### Service name
 
 By default, service name will not be set `OTEL_SERVICE_NAME=`.
 Overwrite the env var with a string value representing service business logic, such as "FinanceServiceCall".
 This will appear as a tracing service name in Sumo Logic.
+
 ### Endpoint
 
 By default, endpoint is not set (`OTEL_EXPORTER_OTLP_ENDPOINT=`). Represents the endpoint where telemetry data will be sent.
 Change to appropriate endpoint, for example `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681`
 
-# Resource attributes
+## Resource attributes
 
 By default, resource attributes are not set (`OTEL_RESOURCE_ATTRIBUTES=`).
 Is used to configure the application name (i.e. `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME`).

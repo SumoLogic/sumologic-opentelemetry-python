@@ -45,3 +45,9 @@ push-test:
 push:
 	python3 -m pip install --upgrade twine
 	python3 -m twine upload dist/*
+
+
+.PHONY: markdownlint
+markdownlint:
+	markdownlint --config .markdownlint.jsonc \
+		Readme.md
