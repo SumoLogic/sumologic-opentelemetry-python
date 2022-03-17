@@ -21,8 +21,7 @@ with io.open(join(here, "README.md"), encoding="utf-8") as f:
         text_type(r":[a-z]+:`~?(.*?)`"), text_type(r"``\1``"), f.read()
     )
 
-EXTRAS_INSTALL = {"all": INSTALL_REQUIRES}
-
+EXTRAS_INSTALL = {"all": INSTALL_REQUIRES_EXTRA}
 
 setup(
     name="sumologic-opentelemetry",
