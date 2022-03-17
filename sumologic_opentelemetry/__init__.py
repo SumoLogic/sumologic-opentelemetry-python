@@ -4,6 +4,6 @@ An all-in-one package for python projects used to enable OpenTelemetry auto-inst
 
 from . import env  # noqa
 
-__version__ = "0.1.22"
+__version__ = "1.9.1"
 __author__ = "Sumo Logic Authors <support@sumologic.com>"
 __all__ = []
