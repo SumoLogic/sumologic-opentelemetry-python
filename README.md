@@ -110,8 +110,6 @@ By default, exported is set to OTLP HTTP (`OTEL_TRACES_EXPORTER=otlp_proto_http`
 ### Service name
 
 By default, service name will not be set `OTEL_SERVICE_NAME=`. Overwrite the env var with a string value representing service business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
-
-
 ### Endpoint
 
 By default, endpoint is not set (`OTEL_EXPORTER_OTLP_ENDPOINT=`). Represents the endpoint where telemetry data will be sent.
