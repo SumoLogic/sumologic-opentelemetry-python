@@ -6,17 +6,29 @@ It contains all supported propagators and auto-instrumentation plugins.
 
 ## Installation
 
+Following command will installation the package with all instrumented packages.
+
+```
+pip install sumologic-opentelemetry[all]
+```
+
+## Installation without instrumented packages
+
 ```
 pip install sumologic-opentelemetry
 ```
+
+Instrumented packages needs to be installed per application.
+Command bellow executed in the root directory of your Python application will install corresponding instrumented packages used by the application.
+
+$ opentelemetry-bootstrap --action=install
 
 ## Instrumented packages
 
 This package installs all officially supported auto-instrumentation packages as well as commonly used propagators and exporters:
 
 ### Instrumented packages
-
-
+Following list of instrumented packages is optional, but recommended for easy installation:
 - [opentelemetry-instrumentation-aws-lambda](https://pypi.org/project/opentelemetry-instrumentation-aws-lambda/)
 - [opentelemetry-instrumentation-dbapi](https://pypi.org/project/opentelemetry-instrumentation-dbapi)
 - [opentelemetry-instrumentation-logging](https://pypi.org/project/opentelemetry-instrumentation-logging)
@@ -54,18 +66,20 @@ This package installs all officially supported auto-instrumentation packages as 
 - [opentelemetry-instrumentation-tornado](https://pypi.org/project/opentelemetry-instrumentation-tornado)
 - [opentelemetry-instrumentation-urllib3](https://pypi.org/project/opentelemetry-instrumentation-urllib3)
 
+### Propagators
 
-### Included propagators
+Following propagators are installed as a dependency.
 
-```
-opentelemetry-distro
-opentelemetry-instrumentation
-opentelemetry-exporter-otlp-proto-http
-opentelemetry-propagator-jaeger
-opentelemetry-propagator-b3
-opentelemetry-propagator-aws-xray
-opentelemetry-propagator-ot-trace
-```
+- [opentelemetry-exporter-otlp-proto-http](https://pypi.org/project/opentelemetry-exporter-otlp-proto-http/)
+- [opentelemetry-propagator-jaeger](https://pypi.org/project/opentelemetry-propagator-jaeger/)
+- [opentelemetry-propagator-b3](https://pypi.org/project/opentelemetry-propagator-b3/)
+- [opentelemetry-propagator-aws-xray](https://pypi.org/project/opentelemetry-propagator-aws-xray/)
+- [opentelemetry-propagator-ot-trace](https://pypi.org/project/opentelemetry-propagator-ot-trace/)
+
+### Other requirements
+
+- [opentelemetry-distro](https://pypi.org/project/opentelemetry-distro/)
+- [opentelemetry-instrumentation](https://pypi.org/project/opentelemetry-instrumentation/)
 
 ## Application execution
 

@@ -12,11 +12,16 @@ with open(join(here, "VERSION")) as VERSION_FILE:
 with open(join(here, "requirements.txt")) as REQUIREMENTS:
     INSTALL_REQUIRES = REQUIREMENTS.read().split("\n")
 
+with open(join(here, "requirements-extra.txt")) as REQUIREMENTS_EXTRA:
+    INSTALL_REQUIRES_EXTRA = REQUIREMENTS_EXTRA.read().split("\n")
+
 with io.open(join(here, "README.md"), encoding="utf-8") as f:
     text_type = type("")
     LONG_DESCRIPTION = re.sub(
         text_type(r":[a-z]+:`~?(.*?)`"), text_type(r"``\1``"), f.read()
     )
+
+EXTRAS_INSTALL = {"all": INSTALL_REQUIRES}
 
 
 setup(
@@ -34,6 +39,7 @@ setup(
     author_email="support@sumologic.com",
     packages=find_packages(exclude=("tests",)),
     install_requires=INSTALL_REQUIRES,
+    extras_require=EXTRAS_INSTALL,
     python_requires=">=3.6",
     # Trove classifiers
     # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
