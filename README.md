@@ -118,4 +118,7 @@ By default, endpoint is not set (`OTEL_EXPORTER_OTLP_ENDPOINT=`). Represents the
 
 # Resource attributes
 
-By default, resource attributes are not set (`OTEL_RESOURCE_ATTRIBUTES=`). Is used to configure the application name (i.e. `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME`). The application name will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
+By default, resource attributes are not set (`OTEL_RESOURCE_ATTRIBUTES=`).
+Is used to configure the application name (i.e. `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME`).
+The application name will appear as a tracing application name in Sumo Logic.
+Additional attributes can be added here as comma separated key=value pairs.
