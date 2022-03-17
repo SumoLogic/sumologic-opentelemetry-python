@@ -17,6 +17,14 @@ def capture_stdout(function, *args, **kwargs):
 
 
 class EnvTestCase(unittest.TestCase):
+    def assert_env_vars_in_stdout(self, stdout, expected):
+        for key, value in expected:
+            self.assertRegex(
+                stdout,
+                r"{key}\w*=\w*{value}\w*".format(key=key, value=value),
+                f"{key}={value} not found in stdout",
+            )
+
     def test_dump_prints_defaults(self):
         expected_env_values = [
             ("OTEL_PROPAGATORS", "tracecontext,baggage,b3,b3multi,jaeger,xray,ottrace"),
@@ -31,14 +39,6 @@ class EnvTestCase(unittest.TestCase):
         os.environ["OTEL_LOG_LEVEL"] = "info"
         _, stdout = capture_stdout(sumologic_opentelemetry.env.dump)
         self.assert_env_vars_in_stdout(stdout, expected_env_values)
-
-    def assert_env_vars_in_stdout(self, stdout, expected):
-        for key, value in expected:
-            self.assertRegex(
-                stdout,
-                r"{key}\w*=\w*{value}\w*".format(key=key, value=value),
-                f"{key}={value} not found in stdout",
-            )
 
     def test_generate_defaults(self):
         sumologic_opentelemetry.env.generate()
