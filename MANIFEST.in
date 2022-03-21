@@ -1,0 +1,6 @@
+include requirements.txt
+include LICENSE
+include VERSION
+include README
+include scripts/sumologic-opentelemetry-instrument
+recursive-exclude scripts *
